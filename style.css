@@ -1,0 +1,189 @@
+/* ==========================================================
+   拓北ひまわり通り整骨院 ダイエットLP
+   Figma「1920w light」(node 651:53) の再現。
+   PC表示では Figma 上の座標をそのまま再現するため、
+   各ブロックは画面中央 (1920幅での x=960) からのオフセット (--x) と
+   直前要素からの間隔 (--mt) で配置しています。
+   ========================================================== */
+
+@property --mt  { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --x   { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --gap { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+:root {
+  --c-accent: #f39f88;
+  --c-text: #736357;
+  --c-text-dark: #3a3a3a;
+  --c-heading: #4b4f58;
+  --c-line: #e5e5e5;
+  --c-cta: #4dce6e;
+  --ff: "Inter", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: #fff;
+  color: var(--c-text);
+  font-family: var(--ff);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-spacing-trim: space-all; /* Figma同様、約物を全角幅のまま組む */
+  overflow-x: hidden;
+}
+img { display: block; max-width: none; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.lp { padding-bottom: 120px; }
+.lp * { margin-top: var(--mt); }
+
+/* 中央基準の配置 */
+.blk { margin-left: calc(50% + var(--x)); }
+
+/* ---------- FV ---------- */
+.fv { position: relative; width: 617px; height: 1024px; }
+.fv__base { width: 614px; height: 1024px; }
+.fv__main { position: absolute; top: 0; left: 3px; width: 614px; height: 1024px; }
+
+/* ---------- CTA ---------- */
+.cta { width: 800px; text-align: center; color: var(--c-text-dark); }
+.cta__btn {
+  display: flex; align-items: center; justify-content: center; gap: 16.4px;
+  width: 321.17px; height: 49px; margin: 0 auto;
+  padding-left: 4px;
+  background: var(--c-cta); border-radius: 3px;
+  color: #fff; font-size: 25px; font-weight: 600; line-height: 25px;
+  transition: opacity .2s;
+}
+.cta__btn:hover { opacity: .85; }
+.cta__btn img { width: 21.875px; height: 25px; }
+.cta__btn span { letter-spacing: .01em; }
+.cta__t1 { font-size: 15px;   line-height: 24.75px; }
+.cta__t2 { font-size: 13.7px; line-height: 24.75px; }
+.cta__t3 { font-size: 13.5px; line-height: 24.75px; }
+
+/* ---------- B/A ---------- */
+.ba img { height: auto; }
+.ba img[width="458"] { width: 458px; }
+.ba img[width="455"] { width: 455px; }
+.ba img[width="454"] { width: 454px; }
+.ba img[width="460"] { width: 460px; }
+.ba img[width="459"] { width: 459px; }
+
+/* ---------- 共通セクション ---------- */
+.sec { width: 680px; }
+.divider { border: 0; border-top: 1px solid var(--c-line); height: 0; }
+
+.h2 {
+  color: var(--c-accent);
+  font-size: 28px; font-weight: 600; line-height: 36.4px;
+}
+.h2--bold { font-weight: 700; }
+.h2--lg { font-size: 32px; line-height: 41.6px; }
+
+.h3 {
+  color: var(--c-heading);
+  font-size: 18px; font-weight: 600; line-height: 23.4px;
+}
+
+.txt {
+  /* PCではFigmaの改行位置を <br class="pc"> で再現 */
+  white-space: nowrap;
+  font-size: 16px; line-height: 28.8px;
+  color: var(--c-text);
+}
+.txt--dark { color: var(--c-text-dark); }
+
+.img680 { width: 680px; height: auto; }
+
+/* ---------- スタッフ ---------- */
+.staff .h2 { margin-left: 0; }
+.staff__body { padding-left: 10px; }
+.staff__photo { width: 185px; height: 185px; margin-left: 242px; border-radius: 50%; }
+
+/* チェックリスト */
+.checks li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 16px; line-height: 22.4px;
+  color: var(--c-text);
+  margin-top: var(--gap, 12px);
+}
+.checks li:first-child { margin-top: 0; }
+.checks li::before {
+  content: "";
+  position: absolute; left: 2.66px; top: 1.6px;
+  width: 20px; height: 20px;
+  background: url("images/icon-check-circle.svg") center / contain no-repeat;
+}
+.staff .checks li { --gap: 12px; }
+
+/* ---------- 店舗情報 ---------- */
+.shop__map { display: block; width: 680px; margin-left: 10px; }
+.shop__map img { width: 680px; height: 400px; }
+
+.book img { width: 310.85px; height: auto; }
+
+/* ---------- 成功する理由 ---------- */
+.reasons { width: 780px; }
+.reasons > .h2 { padding-left: 10px; }
+.reasons__box {
+  margin-left: 10px;
+  width: 780px;
+  padding: 0 20px 40.9px;
+  border: 2px solid var(--c-line);
+  border-radius: 4px;
+}
+.h3r {
+  color: var(--c-accent);
+  font-size: 26px; font-weight: 600; line-height: 33.8px;
+}
+.img400 { width: 400px; height: auto; margin-left: auto; margin-right: auto; }
+.txt--wide { width: 736px; }
+.license { width: 649px; height: auto; margin-left: 62px; }
+
+/* ==========================================================
+   タブレット・スマホ（デザインの配置幅より狭い画面）
+   ========================================================== */
+@media (max-width: 880px) {
+  .blk { margin-left: auto; margin-right: auto; }
+  .lp { padding-bottom: 64px; }
+
+  .fv { width: 100%; max-width: 614px; height: auto; }
+  .fv__base { display: none; }
+  .fv__main { position: static; width: 100%; height: auto; }
+
+  .cta { width: 100%; padding: 0 16px; }
+  .cta__btn { max-width: 100%; }
+  .cta__t3 { padding-left: 0 !important; }
+
+  .ba img { width: calc(100% - 32px) !important; max-width: 460px; margin-left: auto; margin-right: auto; }
+
+  .sec, .reasons { width: auto; padding: 0 16px; }
+  .sec > *, .staff__body > * { max-width: 100%; }
+  .blk:not(.sec):not(.reasons):not(.cta):not(.fv):not(.book) { width: auto; padding: 0 16px; }
+  .txt, .txt--wide { width: auto; white-space: normal; }
+  .txt br.pc { display: none; }
+  .img680, .shop__map, .shop__map img { width: 100%; height: auto; margin-left: 0; }
+  .staff__body { padding-left: 0; }
+  .staff__photo { margin-left: auto; margin-right: auto; }
+
+  .reasons > .h2 { padding-left: 0; }
+  .reasons__box { width: auto; margin-left: 0; padding: 0 16px 32px; }
+  .img400 { width: 100%; max-width: 400px; }
+  .license { width: 100%; margin-left: 0; }
+
+  .book img { width: 72%; max-width: 311px; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .h2 { font-size: 24px; line-height: 1.35; }
+  .h2--lg { font-size: 26px; }
+  .h3r { font-size: 21px; line-height: 1.35; }
+  .h3 { font-size: 17px; line-height: 1.4; }
+  .lp * { margin-top: min(var(--mt), 48px); }
+  .cta__btn { font-size: 22px; }
+}
