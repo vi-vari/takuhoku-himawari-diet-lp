@@ -80,6 +80,7 @@ ul { list-style: none; }
 .cta__t1 { font-size: 15px;   line-height: 24.75px; }
 .cta__t2 { font-size: 13.7px; line-height: 24.75px; }
 .cta__t3 { font-size: 13.5px; line-height: 24.75px; }
+.cta__price { font-size: 1.3em; }
 
 /* ---------- B/A ---------- */
 .ba img { height: auto; }
