@@ -51,7 +51,7 @@ ul { list-style: none; }
 /* ---------- CTA ---------- */
 .cta { width: 800px; text-align: center; color: var(--c-text-dark); }
 .cta__btn {
-  display: block; width: 425px; max-width: 100%; margin: 0 auto;
+  display: block; width: 312px; max-width: 100%; margin: 0 auto;
   transition: transform .2s, opacity .2s;
 }
 .cta__btn:hover { opacity: .9; transform: translateY(-2px); }
@@ -60,10 +60,10 @@ ul { list-style: none; }
 /* ボタン左の金色矢印（参考LP diet-salon-lp と同じ動き）
    1.5秒周期：表示約1.2秒で左→右へ9px移動し、約0.3秒消える。
    速さは animation の 1.5s だけを変えて調整する。 */
-.cta__row { position: relative; width: 425px; max-width: 100%; margin: 0 auto; }
+.cta__row { position: relative; width: 312px; max-width: 100%; margin: 0 auto; }
 .cta-arrow {
   position: absolute; top: 50%; right: calc(100% + 6px);
-  width: 33px; height: auto; margin-top: -17.7px;
+  width: 90px; height: auto; margin-top: -48.3px;
   filter: drop-shadow(1px 2px 1px rgba(0,0,0,.15));
   animation: cta-arrow-nudge 1.5s linear infinite;
 }
@@ -174,9 +174,9 @@ ul { list-style: none; }
 
   .cta { width: 100%; padding: 0 16px; }
   .cta__btn { max-width: 100%; }
-  .cta__row { display: flex; align-items: center; gap: 1.2%; width: 100%; max-width: 460px; }
+  .cta__row { display: flex; align-items: center; gap: 1.2%; width: 100%; max-width: 408px; }
   .cta__row .cta__btn { flex: 1; min-width: 0; width: auto; margin: 0; }
-  .cta-arrow { position: static; flex: none; width: 7.2%; min-width: 26px; margin-top: 0; }
+  .cta-arrow { position: static; flex: none; width: 22%; min-width: 26px; margin-top: 0; }
   .cta__t3 { padding-left: 0 !important; }
 
   .ba img { width: calc(100% - 32px) !important; max-width: 460px; margin-left: auto; margin-right: auto; }
