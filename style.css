@@ -51,16 +51,11 @@ ul { list-style: none; }
 /* ---------- CTA ---------- */
 .cta { width: 800px; text-align: center; color: var(--c-text-dark); }
 .cta__btn {
-  display: flex; align-items: center; justify-content: center; gap: 16.4px;
-  width: 321.17px; height: 49px; margin: 0 auto;
-  padding-left: 4px;
-  background: var(--c-cta); border-radius: 3px;
-  color: #fff; font-size: 25px; font-weight: 600; line-height: 25px;
-  transition: opacity .2s;
+  display: block; width: 425px; max-width: 100%; margin: 0 auto;
+  transition: transform .2s, opacity .2s;
 }
-.cta__btn:hover { opacity: .85; }
-.cta__btn img { width: 21.875px; height: 25px; }
-.cta__btn span { letter-spacing: .01em; }
+.cta__btn:hover { opacity: .9; transform: translateY(-2px); }
+.cta__btn img { display: block; width: 100%; height: auto; }
 .cta__t1 { font-size: 15px;   line-height: 24.75px; }
 .cta__t2 { font-size: 13.7px; line-height: 24.75px; }
 .cta__t3 { font-size: 13.5px; line-height: 24.75px; }
@@ -185,5 +180,4 @@ ul { list-style: none; }
   .h3r { font-size: 21px; line-height: 1.35; }
   .h3 { font-size: 17px; line-height: 1.4; }
   .lp * { margin-top: min(var(--mt), 48px); }
-  .cta__btn { font-size: 22px; }
 }
